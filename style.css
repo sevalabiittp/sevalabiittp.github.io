@@ -1,14 +1,19 @@
-* { box-sizing: border-box; }
-body, h1, h2, p, ul { margin: 0; padding: 0; }
+* { 
+  box-sizing: border-box; 
+}
+body, h1, h2, p, ul { 
+  margin: 0; 
+  padding: 0; 
+}
 
 body {
   font-family: Arial, sans-serif;
-  background: rgb(255, 255, 255);
+  background: #ffffff;
   color: #333;
   line-height: 1.6;
 }
 
-/* Header – force it above everything */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -19,16 +24,37 @@ header {
   isolation: isolate;   
   padding: 15px 30px;
   background-color: #152d45;
+  flex-wrap: wrap;   /* allow wrapping if screen is small */
 }
 
 /* Logo + lab name */
-.logo-container { display: flex; align-items: center; gap: 10px; }
-.logo-container img { height: 50px; width: auto; }
-.lab-name { font-size: 1.5rem; font-weight: bold; color: white; }
+.logo-container { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+.logo-container img { 
+  height: 50px; 
+  width: auto; 
+}
+.lab-name { 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  color: white; 
+}
 
 /* Navigation */
 nav { margin-left: auto; }
-nav ul { list-style: none; display: flex; gap: 25px; }
+nav ul { 
+  list-style: none; 
+  display: flex; 
+  flex-wrap: wrap;  /* wrap items if no space */
+  justify-content: center;
+  gap: 20px; 
+  margin: 0;
+  padding: 0;
+}
+nav ul li { flex: 0 1 auto; }
 nav ul li a {
   display: inline-block;
   padding: 6px 8px;
@@ -37,14 +63,13 @@ nav ul li a {
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
-  z-index: 2;           /* keep links above any header backgrounds */
-  pointer-events: auto; /* be explicit */
+  z-index: 2;
 }
 nav ul li a:hover { color: #00c8ff; }
 
 /* Hero */
 .hero {
-  position: relative;   /* normal stacking, below header */
+  position: relative;
   z-index: 1;
   text-align: center;
   padding: 40px 20px;
@@ -52,8 +77,6 @@ nav ul li a:hover { color: #00c8ff; }
   color: black;
   margin-top: 0;
 }
-
-/* Prevent decorative logo from catching clicks */
 .hero-logo {
   display: block;
   margin: 1px auto 20px auto;
@@ -64,7 +87,7 @@ nav ul li a:hover { color: #00c8ff; }
   pointer-events: none;
 }
 
-/* Poster Gallery Styles */
+/* Poster Gallery */
 .poster-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -74,7 +97,6 @@ nav ul li a:hover { color: #00c8ff; }
   max-width: none;
   padding: 0;
 }
-
 .poster-gallery img {
   width: 100%;
   max-width: 500px;
@@ -82,7 +104,6 @@ nav ul li a:hover { color: #00c8ff; }
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .poster-gallery img:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.2);
@@ -93,7 +114,6 @@ nav ul li a:hover { color: #00c8ff; }
   display: block;
   cursor: zoom-in;
 }
-
 .poster-gallery input:checked + img {
   position: fixed;
   top: 50%;
@@ -110,12 +130,8 @@ nav ul li a:hover { color: #00c8ff; }
   display: inline-block;
   cursor: zoom-in;
 }
-
-/* The dim background overlay */
-.zoom-label .overlay {
-  display: none;
-}
-
+/* Overlay */
+.zoom-label .overlay { display: none; }
 .zoom-label input:checked ~ .overlay {
   display: block;
   position: fixed;
@@ -123,8 +139,7 @@ nav ul li a:hover { color: #00c8ff; }
   background: rgba(0,0,0,0.7);
   z-index: 9998;
 }
-
-/* Zoomed image in lightbox */
+/* Zoomed image */
 .zoom-label input:checked + .overlay + img {
   position: fixed;
   top: 50%;
@@ -139,7 +154,10 @@ nav ul li a:hover { color: #00c8ff; }
 }
 
 /* Content */
-.content { padding: 40px 20px; text-align: center; }
+.content { 
+  padding: 40px 20px; 
+  text-align: center; 
+}
 
 /* Footer */
 footer {
@@ -151,10 +169,7 @@ footer {
 }
 
 /* ------------------------- */
-/* ✅ Responsive Fixes */
-/* ------------------------- */
-
-/* For tablets & mobiles */
+/* Responsive: tablets & mobiles */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -168,15 +183,13 @@ footer {
   }
 
   nav ul {
-    flex-direction: column;
+    justify-content: flex-start;
     gap: 10px;
-    width: 100%;
-    padding: 0;
   }
 
-  nav ul li {
-    text-align: center;
-    width: 100%;
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 6px 8px;
   }
 
   .poster-gallery {
@@ -190,7 +203,7 @@ footer {
   }
 }
 
-/* ✅ Ensure images never overflow */
+/* Ensure images never overflow */
 img {
   max-width: 100%;
   height: auto;
