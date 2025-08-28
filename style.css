@@ -70,14 +70,14 @@ nav ul li a:hover { color: #00c8ff; }
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-items: center;
-  margin: 30px 0; /* Changed from 'auto' to remove horizontal centering */
-  max-width: none; /* Remove the maximum width constraint */
-  padding: 0; /* Remove padding that was creating left margin */
+  margin: 30px 0;
+  max-width: none;
+  padding: 0;
 }
 
 .poster-gallery img {
   width: 100%;
-  max-width: 500px; /* Increased from 400px to 500px */
+  max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -88,18 +88,6 @@ nav ul li a:hover { color: #00c8ff; }
   box-shadow: 0 12px 20px rgba(0,0,0,0.2);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .poster-gallery {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 0 10px; /* Add minimal padding on mobile */
-  }
-  
-  .poster-gallery img {
-    max-width: 100%;
-  }
-}
 /* Zoom toggle using hidden checkbox */
 .poster-gallery label {
   display: block;
@@ -115,6 +103,7 @@ nav ul li a:hover { color: #00c8ff; }
   z-index: 10000;
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
+
 /* Wrapper label */
 .zoom-label {
   position: relative;
@@ -131,7 +120,7 @@ nav ul li a:hover { color: #00c8ff; }
   display: block;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7); /* semi-transparent black */
+  background: rgba(0,0,0,0.7);
   z-index: 9998;
 }
 
@@ -143,14 +132,11 @@ nav ul li a:hover { color: #00c8ff; }
   transform: translate(-50%, -50%);
   cursor: zoom-out;
   z-index: 9999;
-  max-width: 70vw;   /* smaller width */
-  max-height: 70vh;  /* reduced height */
+  max-width: 70vw;
+  max-height: 70vh;
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
   border-radius: 12px;
 }
-
-
-
 
 /* Content */
 .content { padding: 40px 20px; text-align: center; }
@@ -162,4 +148,51 @@ footer {
   background: #2c3e50;
   color: #ecf0f1;
   margin-top: 30px;
+}
+
+/* ------------------------- */
+/* ✅ Responsive Fixes */
+/* ------------------------- */
+
+/* For tablets & mobiles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .poster-gallery {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 10px;
+  }
+
+  .poster-gallery img {
+    max-width: 100%;
+  }
+}
+
+/* ✅ Ensure images never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
