@@ -27,6 +27,38 @@ header {
   flex-wrap: wrap;   /* allow wrapping if screen is small */
 }
 
+.content h1 {
+  font-size: 36px;
+  color: #2874A6;
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  font-size: 24px;
+  color: #2874A6;   /* <-- your required blue */
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.details {
+  max-width: 600px;
+}
+
+
 /* Logo + lab name */
 .logo-container { 
   display: flex; 
@@ -176,6 +208,23 @@ footer {
     align-items: flex-start;
     gap: 10px;
   }
+  /* Mobile view */
+  
+  /* By default, align left */
+  body:not(.home) .content {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Keep index (home) page centered */
+  body.home .content {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
 
   .logo-container {
     justify-content: center;
