@@ -217,8 +217,8 @@ footer {
   
   /* By default, align left */
   body:not(.home) .content {
-    padding-left: 10px !important;   /* force padding on mobile */
-    padding-right: 10px !important;
+    padding-left: 40px !important;   /* force padding on mobile */
+    padding-right: 40px !important;
     text-align: left;
   }
 
@@ -263,6 +263,7 @@ img {
   height: auto;
   display: block;
 }
+
 
 
 
