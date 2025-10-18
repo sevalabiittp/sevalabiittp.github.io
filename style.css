@@ -249,9 +249,11 @@ footer {
     grid-template-columns: 1fr; /* 1 per row on mobile */
   }
   .person {
-    flex-direction: row; /* keep image left, text right */
-    width: 100%;
-  }
+  flex-direction: column; /* stack image above text */
+  align-items: center;    /* center both image and text */
+  text-align: center;     /* center text for better look */
+  width: 100%;
+ }
   table, thead, tbody, th, td, tr {
     display: block;
   }
@@ -337,3 +339,4 @@ img {
   text-align:justify;
   color: #333;
 }
+
