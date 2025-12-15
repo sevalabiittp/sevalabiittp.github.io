@@ -281,6 +281,11 @@ footer {
     left: 10px;
     font-weight: bold;
   }
+  td[data-label="Project Name"],
+  td[data-label="Year"],
+  td[data-label="Authors"] {
+    display: none;
+  }
 }
 
 /* Ensure images never overflow */
@@ -540,6 +545,7 @@ body.projects footer {
     font-size: 16px;
   }
 }
+
 
 
 
