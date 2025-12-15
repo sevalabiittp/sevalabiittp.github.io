@@ -523,7 +523,7 @@ body.projects footer {
 /* ------------------------------ */
 /* RESPONSIVE: TABLETS            */
 /* ------------------------------ */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .project-poster-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -532,7 +532,7 @@ body.projects footer {
 /* ------------------------------ */
 /* RESPONSIVE: MOBILE             */
 /* ------------------------------ */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .project-poster-grid {
     grid-template-columns: 1fr;
   }
@@ -545,3 +545,4 @@ body.projects footer {
     font-size: 16px;
   }
 }
+
