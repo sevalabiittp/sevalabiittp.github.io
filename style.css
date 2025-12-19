@@ -275,11 +275,13 @@ footer {
     text-align: left;
   }
 
+  td {
+    padding-left: 10px !important;
+  }
+
   td:before {
-    content: attr(data-label); /* use custom attribute */
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
+    display: none !important;
+    content: none !important;
   }
 
 }
@@ -440,3 +442,4 @@ body.projects ul li {
     text-align: justify;
   }
 }
+
